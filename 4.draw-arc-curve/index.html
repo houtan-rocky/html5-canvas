@@ -1,0 +1,52 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<canvas id='mycanvas'></canvas>
+
+
+<script>
+  window.onload = function () {
+    const canvas = document.getElementById("mycanvas")
+    const context = canvas.getContext("2d")
+
+    // draw line steps
+    const radian = Math.PI / 180
+
+
+    // arc API:
+    // context.arc(x, y, radius, start, end, counterClockwise)
+
+    context.beginPath()
+    context.strokeStyle = 'blue'
+    context.lineWidth = 10
+    context.arc(50, 50, 20, 0 * radian, radian * 180)
+    context.stroke()
+
+
+    // second arc
+    context.beginPath()
+    context.strokeStyle = 'red'
+    context.lineWidth = 10
+    context.arc(100, 100, 20, 50 * radian, radian * 150, true)
+    context.stroke()
+
+    // third arc
+    context.beginPath()
+    context.strokeStyle = 'green'
+    context.lineWidth = 10
+    context.arc(200, 100, 20, 50 * radian, radian * 110)
+    context.stroke()
+
+  }
+</script>
+
+
+<style>
+  #mycanvas {
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    margin: 0 auto;
+  }
+</style>

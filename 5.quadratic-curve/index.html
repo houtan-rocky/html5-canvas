@@ -1,0 +1,48 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<canvas id='mycanvas'></canvas>
+
+
+<script>
+  window.onload = function () {
+    const canvas = document.getElementById("mycanvas")
+    const context = canvas.getContext("2d")
+
+    // draw line steps
+    const radian = Math.PI / 180
+
+
+    // arc API:
+    // context.quadraticCurveTo(controlX, controlY, endX, endY)
+
+    context.beginPath()
+    context.strokeStyle = 'blue'
+    context.moveTo(100, 100)
+    context.lineWidth = 10
+    context.quadraticCurveTo(150, 150, 200, 100)
+    context.stroke()
+
+    context.beginPath()
+    context.strokeStyle = 'red'
+    context.moveTo(40, 40)
+    context.lineWidth = 10
+    context.quadraticCurveTo(70, 150, 100, 40)
+    context.stroke()
+
+
+
+
+  }
+</script>
+
+
+<style>
+  #mycanvas {
+    width: 50vw;
+    height: 50vh;
+    display: flex;
+    margin: 0 auto;
+  }
+</style>

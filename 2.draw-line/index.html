@@ -1,0 +1,31 @@
+<head><meta charset="UTF-8"></head>
+
+<canvas id='mycanvas'></canvas> 
+
+
+<script>
+  window.onload = function () {
+    const canvas = document.getElementById("mycanvas")
+    const context = canvas.getContext("2d")
+
+    // draw line steps
+    context.beginPath();
+    context.strokeStyle = 'red' // line color
+    context.lineWidth = 10 // line color
+    context.moveTo(30, 70);
+    context.lineTo(30, 200);
+    context.lineTo(80, 200);
+    context.stroke()
+
+
+
+  }
+</script>
+
+
+<style>
+  #mycanvas {
+    width: 500px;
+    height: 500px;
+  }
+</style>
