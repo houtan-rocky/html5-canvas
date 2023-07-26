@@ -1,0 +1,64 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>
+  <canvas id='mycanvas' width='400' height='400'></canvas>
+</div>
+
+
+<script>
+  window.onload = function () {
+    const canvas = document.getElementById("mycanvas")
+    const context = canvas.getContext("2d")
+
+    // theme
+    const lightCellColor = '#ddb180'
+    const darkCellColor = '#7c330c'
+
+    // frame
+    context.strokeStyle = 'black'
+    context.strokeRect(0, 0, 400, 400)
+
+    function drawBackground() {
+      let x = 0
+      let fillStyle = lightCellColor
+      for (let i = 0; i < 8; i++) {
+        let y = 0
+        for (let j = 0; j < 8; j++) {
+          context.fillStyle = fillStyle
+          context.fillRect(x, y, 50, 50)
+          y += 50
+          fillStyle = fillStyle === lightCellColor ? darkCellColor : lightCellColor
+        }
+        fillStyle = fillStyle === lightCellColor ? darkCellColor : lightCellColor
+        x += 50
+        console.log(x, y)
+      }
+    }
+
+    drawBackground()
+
+
+
+    //cell 2
+    // context.fillStyle = darkCellColor
+    // context.fillRect(50, 0, 50, 50)
+
+  }
+</script>
+
+
+<style>
+  * {
+    margin: 0
+  }
+
+
+
+  #mycanvas {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+  }
+</style>

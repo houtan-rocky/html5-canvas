@@ -1,0 +1,61 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div>
+  <button id='mybtn' type='button' >clearAll</button>
+  <canvas id='mycanvas'></canvas>
+</div>
+
+
+<script>
+  window.onload = function () {
+    const mybtn = document.getElementById('mybtn');
+    const canvas = document.getElementById("mycanvas")
+    const context = canvas.getContext("2d")
+
+    context.strokeStyle = 'red'
+    context.fillStyle = 'blue'
+    context.rect(10, 50, 80, 50)
+    context.stroke()
+    context.fill()
+
+
+    // short term for a filled rectangle
+    // context.fillRect(xCoordinate, yCoordinate, width, height)
+
+    context.fillStyle = 'green'
+    context.fillRect(100, 50, 90, 50)
+
+    // short term for a stroked rectangle
+    // context.strokeRect(xCoordinate, yCoordinate, width, height)
+    context.fillStyle = 'yellow'
+    context.strokeRect(200, 50, 90, 50)
+
+
+    // context.clearRect(xCoordinate, yCoordinate, width, height)
+    context.clearRect(10, 50, 20, 20)
+
+    
+
+    mybtn.addEventListener('click',
+      function clearAll() {
+        context.clearRect(0, 0, 300, 300)
+      }
+    )
+
+  }
+</script>
+
+
+<style>
+  * {
+    margin: 0
+  }
+
+  #mycanvas {
+    width: 100%;
+    height: 100vh;
+    margin: 0 auto;
+  }
+</style>

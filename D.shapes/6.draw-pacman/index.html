@@ -1,0 +1,63 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>
+  <canvas id='mycanvas' width='400' height='400'></canvas>
+</div>
+
+
+<script>
+  window.onload = function () {
+
+    // setup
+    const canvas = document.getElementById("mycanvas")
+    const ctx = canvas.getContext("2d")
+
+    function drawPacman(x, y, radius, startAngle, endAngle) {
+      const radian = Math.PI / 180
+
+      // draw body
+      ctx.beginPath()
+      ctx.strokeStyle = 'black'
+      ctx.fillStyle = 'yellow'
+      ctx.lineCap = 'butt'
+      ctx.lineWidth = 5
+      ctx.lineTo(x, y)
+      ctx.arc(x, y, radius, startAngle * radian, endAngle * radian)
+      ctx.lineTo(x, y)
+      ctx.stroke()
+      ctx.fill()
+
+      // draw eye
+      ctx.beginPath()
+      ctx.fillStyle = 'black'
+      ctx.arc(x, y - radius / 2, 10, 0 * radian, 360 * radian)
+      ctx.fill()
+    }
+
+
+
+
+
+    // body
+    drawPacman(200, 200, 50, 40, 320)
+
+
+  }
+</script>
+
+
+<style>
+  * {
+    margin: 0
+  }
+
+
+
+  #mycanvas {
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+  }
+</style>
