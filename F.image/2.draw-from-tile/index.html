@@ -1,0 +1,65 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>
+  <canvas id='mycanvas' width='400' height='400'></canvas>
+</div>
+
+
+<script>
+  window.onload = function () {
+
+    // setup
+    const canvas = document.getElementById("mycanvas")
+    const ctx = canvas.getContext("2d")
+
+    // drawImage(img, dx, dy)
+    // drawImage(img, dx, dy, dw, dh)
+    // drawImage(img,sx, sy, sw, sh, dx, dy, dw, dh)
+
+    const pokemonTileset = new Image()
+    pokemonTileset.src = './assets/minecraft-tileset.png'
+
+
+    pokemonTileset.onload = function () {
+      // grass
+      ctx.drawImage(pokemonTileset, 0, 0, 80, 80, 0, 0, 70, 70)
+      // dirt
+      ctx.drawImage(pokemonTileset, 80, 0, 80, 80, 90, 0, 70, 70)
+      // cement
+      ctx.drawImage(pokemonTileset, 160, 0, 80, 80, 180, 0, 70, 70)
+      // water
+      ctx.drawImage(pokemonTileset, 240, 0, 80, 80, 270, 0, 70, 70)
+      // gold
+      ctx.drawImage(pokemonTileset, 320, 0, 80, 80, 0, 90, 70, 70)
+      // mud
+      ctx.drawImage(pokemonTileset, 400, 0, 80, 80, 0, 90, 70, 70)
+      // fungus
+      ctx.drawImage(pokemonTileset, 0, 80, 80, 80, 0, 90, 70, 70)
+      // tnt
+      ctx.drawImage(pokemonTileset, 80, 80, 80, 80, 90, 90, 70, 70)
+      // glass
+      ctx.drawImage(pokemonTileset, 160, 80, 80, 80, 180, 90, 70, 70)
+      // gold stone
+      ctx.drawImage(pokemonTileset, 240, 80, 80, 80, 270, 90, 70, 70)
+    }
+
+
+  }
+</script>
+
+
+<style>
+  * {
+    margin: 0
+  }
+
+
+
+  #mycanvas {
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+  }
+</style>

@@ -1,0 +1,44 @@
+<head><meta charset="UTF-8"></head>
+
+<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>
+  <canvas id='mycanvas' width='400' height='400'></canvas>
+</div>
+
+
+<script>
+const canvas = document.getElementById("mycanvas");
+const ctx = canvas.getContext("2d");
+
+
+
+
+// Rect 2
+ctx.fillStyle = 'yellow'
+ctx.fillRect(10, 30, 50, 50)
+ctx.save();
+
+
+// Rect 3
+ctx.fillStyle = 'green'
+ctx.fillRect(70, 30, 50, 50)
+ctx.save();
+
+// Rect 4
+ctx.restore()
+ctx.fillRect(130, 30, 50, 50)
+
+// Rect 5
+ctx.restore()
+ctx.fillRect(200, 30, 50, 50)
+
+
+
+</script>
+
+<style>
+  #mycanvas {
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+  }
+</style>

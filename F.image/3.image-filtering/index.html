@@ -1,0 +1,66 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>
+  <canvas id='mycanvas' width='400' height='400'></canvas>
+</div>
+
+
+<script>
+  window.onload = function () {
+
+    // setup
+    const canvas = document.getElementById("mycanvas")
+    const ctx = canvas.getContext("2d")
+
+    // drawImage(img, dx, dy)
+    // drawImage(img, dx, dy, dw, dh)
+    // drawImage(img,sx, sy, sw, sh, dx, dy, dw, dh)
+
+    const katyImage = new Image()
+    katyImage.src = './assets/katherine.jpg'
+
+
+    katyImage.onload = function () {
+
+      function negativeFilter() {
+        ctx.drawImage(katyImage, 0, 0)
+
+        const imageData = ctx.getImageData(0, 0, katyImage.width, katyImage.height)
+        console.log(imageData)
+
+        for (let i = 0; i < imageData.data.length; i += 4) {
+          imageData.data[i] = 255 - imageData.data[i] //reds
+          imageData.data[i + 1] = 255 - imageData.data[i + 1] //greens
+
+          imageData.data[i + 2] = 255 - imageData.data[i + 1] // blues
+          // imageData.data[i + 3] = 190 // alpha (opacity)
+        }
+        ctx.putImageData(imageData, 0, 0)
+      }
+
+
+
+      negativeFilter()
+    }
+
+
+
+  }
+</script>
+
+
+<style>
+  * {
+    margin: 0
+  }
+
+
+
+  #mycanvas {
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+  }
+</style>

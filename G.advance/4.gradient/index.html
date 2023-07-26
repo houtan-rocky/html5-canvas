@@ -1,0 +1,68 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div style='display: flex; justify-content: center; align-items: center; width: 100%; height: 100vh;'>
+  <canvas id='mycanvas' width='1000' height='1000'></canvas>
+</div>
+
+
+<script>
+  const canvas = document.getElementById('mycanvas')
+  const ctx = canvas.getContext('2d')
+
+
+  // context.createLinearGradient(x1, y1, x2, y2)
+  // context.createRadialGradient(x1, y1, r1, x2, y2, r2)
+
+  const gradient = ctx.createLinearGradient(30, 30, 290, 290)
+  gradient.addColorStop(0, "red")
+  gradient.addColorStop(0.2, "blue")
+  gradient.addColorStop(0.5, "green")
+  gradient.addColorStop(0.5, "crimson")
+  gradient.addColorStop(1, "white")
+
+  const radialGradient = ctx.createRadialGradient(400, 30, 300, 700, 330, 300)
+  radialGradient.addColorStop(0, "red")
+  radialGradient.addColorStop(0.2, "blue")
+  radialGradient.addColorStop(0.5, "green")
+  radialGradient.addColorStop(0.5, "crimson")
+  radialGradient.addColorStop(1, "white")
+
+  ctx.fillStyle = gradient
+  ctx.lineWidth = 2
+  ctx.rect(400, 30, 300, 300)
+  ctx.fill()
+  ctx.stroke()
+  
+  ctx.strokeStyle = 'black'
+  ctx.fillStyle = radialGradient
+  ctx.lineWidth = 2
+  ctx.rect(30, 30, 300, 300)
+  ctx.fill()
+
+  
+
+
+
+
+  
+
+
+
+  
+
+
+
+</script>
+
+<style>
+  * {
+    margin: 0
+  }
+
+  #mycanvas {
+    width: 100vh;
+    height: 100vh;
+  }
+</style>
