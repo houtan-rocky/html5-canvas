@@ -1,0 +1,78 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>
+  <canvas id='mycanvas' width='400' height='400'></canvas>
+</div>
+
+
+<script>
+  // setup
+  const canvas = document.getElementById("mycanvas")
+  const ctx = canvas.getContext("2d")
+
+  window.onload = function () {
+
+    // vertical reference line
+    ctx.strokeStyle = 'red'
+    ctx.moveTo(100, 100)
+    ctx.lineTo(100, 300)
+    ctx.stroke()
+
+    ctx.font = 'normal medium 10px consolas'
+
+    ctx.textAlign = 'start'
+    ctx.fillText('start', 100, 100)
+
+    ctx.textAlign = 'center'
+    ctx.fillText('center', 100, 120)
+
+    ctx.textAlign = 'left'
+    ctx.fillText('left', 100, 140)
+
+    ctx.textAlign = 'end'
+    ctx.fillText('end', 100, 160)
+    
+    ctx.textAlign = 'right'
+    ctx.fillText('right', 100, 180)
+
+    ctx.strokeStyle = 'red'
+    ctx.moveTo(0, 300)
+    ctx.lineTo(400, 300)
+    ctx.stroke()
+
+    
+    ctx.textBaseline = 'alphabetic'
+    ctx.fillText('alphabetic', 100, 300)
+
+    ctx.textBaseline = 'top'
+    ctx.fillText('top', 150, 300)
+
+    ctx.textBaseline = 'hanging'
+    ctx.fillText('hanging', 250, 300)
+
+    ctx.textBaseline = 'ideographic'
+    ctx.fillText('ideographic', 350, 300)
+
+    ctx.textBaseline = 'bottom'
+    ctx.fillText('bottom', 250, 300)
+
+    
+  }
+</script>
+
+
+<style>
+  * {
+    margin: 0
+  }
+
+
+
+  #mycanvas {
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+  }
+</style>

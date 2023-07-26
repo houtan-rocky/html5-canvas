@@ -1,0 +1,46 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>
+  <canvas id='mycanvas' width='400' height='400'></canvas>
+</div>
+
+
+<script>
+  window.onload = function () {
+
+    // setup
+    const canvas = document.getElementById("mycanvas")
+    const ctx = canvas.getContext("2d")
+    ctx.font = 'normal bolder xxx-large courier'
+
+    // context.fillText(text, xCoord, yCoord, maxWidth)
+    const text1 = "This is normal bolder xxx-large courier -- fill"
+    ctx.fillText(text1, 0, 100, 400)
+
+
+
+    // context.strokeText(text, xCoord, yCoord, maxWidth)
+    const text2 = "This is italic lighter x-large in dank mono -- stroke"
+    ctx.font = 'italic lighter x-large "dank mono"'
+    ctx.strokeText(text2, 0, 200, 400)
+
+
+  }
+</script>
+
+
+<style>
+  * {
+    margin: 0
+  }
+
+
+
+  #mycanvas {
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+  }
+</style>

@@ -14,8 +14,33 @@
     const canvas = document.getElementById("mycanvas")
     const ctx = canvas.getContext("2d")
 
-    function drawPolygon(x, y, radius, startAngle, endAngle) {
-      
+    function drawPolygon({ sides, centerX, centerY, radius, startAngle }) {
+      const angle = (2 * Math.PI) / sides
+
+      // setup
+      ctx.beginPath()
+      ctx.strokeStyle = 'red'
+      ctx.lineWidth = 5
+      ctx.lineJoin = 'round'
+
+      // beginning coordinates
+      let currentX = centerX + radius * Math.cos(startAngle)
+      let currentY = centerY - radius * Math.sin(startAngle)
+
+      ctx.moveTo(currentX, currentY)
+
+      // draw lines
+      for (let i = 0; i < sides; i++) {
+        const currentAngle = startAngle + i * angle
+        currentX = centerX + radius * Math.cos(currentAngle)
+        currentY = centerY - radius * Math.sin(currentAngle)
+
+        ctx.lineTo(currentX, currentY)
+      }
+
+      ctx.closePath()
+      ctx.stroke()
+
 
     }
 
@@ -23,8 +48,7 @@
 
 
 
-    // body
-    drawPolygon()
+    drawPolygon({ centerX: 200, centerY: 200, radius: 100, startAngle: 0, sides: 6 })
 
 
   }

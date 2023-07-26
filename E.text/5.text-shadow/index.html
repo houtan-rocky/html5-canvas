@@ -1,0 +1,47 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>
+  <canvas id='mycanvas' width='400' height='400'></canvas>
+</div>
+
+
+<script>
+  window.onload = function () {
+
+    // setup
+    const canvas = document.getElementById("mycanvas")
+    const ctx = canvas.getContext("2d")
+    ctx.font = 'normal bolder xxx-large courier'
+
+    // context.fillText(text, xCoord, yCoord, maxWidth)
+    const text1 = "Shadow outside of the box"
+    ctx.shadowColor = 'black'
+    ctx.shadowOffsetX = 10
+    ctx.shadowOffsetY = 10
+    ctx.shadowBlur = 10
+
+    ctx.rect(40, 50, 200, 200)
+    ctx.stroke()
+
+    ctx.fillText(text1, 0, 100, 390)
+
+
+  }
+</script>
+
+
+<style>
+  * {
+    margin: 0
+  }
+
+
+
+  #mycanvas {
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+  }
+</style>

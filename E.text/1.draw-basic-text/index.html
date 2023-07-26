@@ -1,0 +1,45 @@
+<head>
+  <meta charset="UTF-8">
+</head>
+
+<div style='display: flex; justify-content: center; align-items: center; height: 100vh;'>
+  <canvas id='mycanvas' width='400' height='400'></canvas>
+</div>
+
+
+<script>
+  window.onload = function () {
+
+    // setup
+    const canvas = document.getElementById("mycanvas")
+    const ctx = canvas.getContext("2d")
+    ctx.font = '45px consolas'
+
+    // context.fillText(text, xCoord, yCoord, maxWidth)
+    const text1 = "This is fill text"
+    ctx.fillText(text1, 0, 100, 400)
+
+
+
+    // context.strokeText(text, xCoord, yCoord, maxWidth)
+    const text2 = "This is stroke text"
+    ctx.strokeText(text2, 0, 200, 400)
+
+
+  }
+</script>
+
+
+<style>
+  * {
+    margin: 0
+  }
+
+
+
+  #mycanvas {
+    width: 100vh;
+    height: 100vh;
+    margin: 0 auto;
+  }
+</style>
